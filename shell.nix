@@ -10,5 +10,9 @@ in
           pkgs.curl
           pkgs.dotnet-sdk
       ];
+
+      shellHook = ''
+        export GIT_SSL_CAINFO="${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt"
+      '';
     }
   else pkgs
